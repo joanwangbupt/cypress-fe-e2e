@@ -1,0 +1,35 @@
+{
+  "name": "cypress-fe-e2e",
+  "version": "1.0.0",
+  "description": "UI automation repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open --env version=uat --browser chrome --e2e",
+    "cy:open-stage": "cypress open --env version=stage --browser chrome --e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanwangbupt/cypress-fe-e2e.git"
+  },
+  "keywords": [
+    "UI",
+    "Cypress"
+  ],
+  "author": "Joan Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanwangbupt/cypress-fe-e2e/issues"
+  },
+  "homepage": "https://github.com/joanwangbupt/cypress-fe-e2e#readme",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3"
+  },
+  "devDependencies": {
+    "cypress": "^12.11.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
