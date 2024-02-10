@@ -6,12 +6,12 @@ Given ('open the gmail homePage', () => {
 
 When ('input valid emailAddress', () =>{
     cy.get('input[type="email"]').type('mekingfun86@gmail.com')
-    cy.get('span[jsname="V67aGc"]').click()
+    cy.contains('Next').click()
 })
 
 Then ('input valid password', () =>{
     cy.get('input[type="password"]').type('1983216wl!@#')
-    cy.get('span[jsname="V67aGc"]').click()
+    cy.contains('Next').click()
 })
 
 Then ('get the 2nd step virification message', () =>{
