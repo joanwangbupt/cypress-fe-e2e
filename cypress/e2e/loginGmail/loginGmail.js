@@ -9,7 +9,7 @@ When ('click signIn', () =>{
 })
 
 Then ('input valid emailAddress', () =>{
-    cy.get('input[type='email']').type('mekingfun86@gmail.com')
+    cy.get('input[type="email"]').type('mekingfun86@gmail.com')
     cy.get('.VfPpkd-vQzf8d').click()
 })
 
