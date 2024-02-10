@@ -5,11 +5,11 @@ Given ('open the gmail homePage', () => {
 })
 
 When ('click signIn', () =>{
-    cy.get(‘.button.button--medium.button--mobile-before-hero-only’).click()
+    cy.get('.button.button--medium.button--mobile-before-hero-only').click()
 })
 
 Then ('input valid emailAddress', () =>{
-    cy.get(’input[type='email']‘).type('mekingfun86@gmail.com')
+    cy.get('input[type='email']').type('mekingfun86@gmail.com')
     cy.get('.VfPpkd-vQzf8d').click()
 })
 
