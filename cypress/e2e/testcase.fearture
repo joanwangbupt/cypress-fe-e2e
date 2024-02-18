@@ -1,0 +1,3 @@
+Feature: check Google
+Scenario: open Google web page and check the title.
+Given: 
