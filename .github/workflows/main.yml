@@ -1,8 +1,8 @@
 name: FE-e2e run on Cypress cloud
 
 on:
-  pull_request:
-    types:[opened, synchronize, reopened]
+  # pull_request:
+  #   types:[opened, synchronize, reopened]
   push:
     branches: [main, AddGHA]
     # branches-igore
