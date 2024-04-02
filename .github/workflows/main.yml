@@ -1,0 +1,44 @@
+name: FE-e2e run on Cypress cloud
+
+on:
+  pull_request:
+    types:[opened, synchronize, reopened]
+  push:
+    branches: [main, AddGHA]
+    # branches-igore
+    # tags:
+    # tags-ignore:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-lastest
+    environment: UAT
+    env:
+      CYPRESS_BaseURL: ${{ vars.CYPRESS_BaseURL }}
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.2
+          registry-url: 'http://registry.npmjs.org'
+      - name: debug
+        run: echo "cypress baseurl is $CYPRESS_BaseURL"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-actions@v5
+        with:
+          # build: npm run build
+          # start: npm start
+          record: true
+          spec: cypress/e2e/loginTest.feature
+        env:
+          CYPRESS_RECORD_KEY: ${{ secret.CYPRESS_RECORD_KEY }}
+          CYPRESS_PROJECT_ID: ${{ secret.CRPRESS_PROJECT_ID }}
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+  job-depend-on-cypress-run:
+    needs: cypress-run
+    runs-on: ubuntu-latest
+    steps:
+     - name: job depends on job cypress-run
+       run: echo "it is the job depneds on cypress-run"     
