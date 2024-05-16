@@ -1,0 +1,10 @@
+{
+    "projectId": "p5wwmw",
+    "record": true,
+    "integrationFolder": "cypress/integration",
+    "video": true,
+    "videoUploadOnPasses": false,
+    "env": {
+        "slackWebhookUrl": "https://app.slack.com/client/T073QTZ2BAP/C073AF3F68P"
+    }
+}
