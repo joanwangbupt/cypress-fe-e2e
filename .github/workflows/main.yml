@@ -8,11 +8,21 @@ on:
     # branches-igore
     # tags:
     # tags-ignore:
+  schedule:
+    - cron: '25 9 * * *'
+  workflow_dispatch:
+      inputs:
+        nodejs-version:
+          type: string
+          default: '20'
+        featurePath:
+          type: string
+          default: 'cypress/e2e/search.feature'
 
 jobs:
   cypress-run:
     runs-on: ubuntu-lastest
-    environment: UAT
+    # environment: UAT
     env:
       CYPRESS_BaseURL: ${{ vars.CYPRESS_BaseURL }}
     steps:
@@ -31,7 +41,7 @@ jobs:
           # build: npm run build
           # start: npm start
           record: true
-          spec: cypress/e2e/loginTest.feature
+          spec: cypress/e2e/search.feature
         env:
           CYPRESS_RECORD_KEY: ${{ secret.CYPRESS_RECORD_KEY }}
           CYPRESS_PROJECT_ID: ${{ secret.CRPRESS_PROJECT_ID }}
