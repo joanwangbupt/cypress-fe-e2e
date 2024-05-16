@@ -22,7 +22,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-lastest
-    # environment: UAT
+    environment: UAT
     env:
       CYPRESS_BaseURL: ${{ vars.CYPRESS_BaseURL }}
     steps:
@@ -45,10 +45,4 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secret.CYPRESS_RECORD_KEY }}
           CYPRESS_PROJECT_ID: ${{ secret.CRPRESS_PROJECT_ID }}
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
-  job-depend-on-cypress-run:
-    needs: cypress-run
-    runs-on: ubuntu-latest
-    steps:
-     - name: job depends on job cypress-run
-       run: echo "it is the job depneds on cypress-run"     
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}   
