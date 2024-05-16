@@ -14,7 +14,7 @@ module.exports = defineConfig({
   responseTimeout: 80000,
   video: false,
   env:{
-
+    "slackWebhookUrl": "https://app.slack.com/client/T073QTZ2BAP/C073AF3F68P"
   },
 
   e2e: {
