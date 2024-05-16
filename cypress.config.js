@@ -4,7 +4,7 @@ const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify");
 
 module.exports = defineConfig({
-  projectId: 'abcedf',
+  projectId: 'p5wwmw',
   defaultCommandTimeout: 60000,
   viewportWidth: 1200,
   viewportHeight: 800,
