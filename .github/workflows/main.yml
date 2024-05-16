@@ -21,7 +21,7 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-20.04
     environment: UAT
     env:
       CYPRESS_BaseURL: ${{ vars.CYPRESS_BaseURL }}
